@@ -1,12 +1,10 @@
 ﻿
-Tamagotchi t = new Tamagotchi();
-t.name = "Henry";
-t.Tick();
-t.Tick();
-t.Tick();
-t.PrintStats();
-t.Feed();
-t.PrintStats();
-Console.WriteLine(t.GetAlive());
+Tamagotchi t1 = new Tamagotchi();
+
+Console.WriteLine("Please name your tamagotchi");
+t1.name = Console.ReadLine();
+
+Console.WriteLine($"{t1.name}");
+
 
 Console.ReadLine();
