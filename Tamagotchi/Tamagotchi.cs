@@ -1,18 +1,20 @@
 using System;
+using System.Collections.Generic;
 
 public class Tamagotchi
 {
     int hunger;
     int boredom;
     bool isAlive = true;
-    private List<string> words = new List<string>();
+    private List<string> words = new List<string>(){"Hi"};
     Random generator = new Random();
     public string name = "Alice";
 
     public void Feed()
     {
         Console.WriteLine($"{name} eats and is less hungry.");
-        hunger -= 1;
+        hunger -= 2;
+        Console.ReadLine();
 
     }
 
@@ -29,6 +31,7 @@ public class Tamagotchi
         Console.WriteLine($"{name} learns {word}");
         words.Add(word);
         ReduceBoredom();
+        Console.ReadLine();
 
     }
 
@@ -60,7 +63,8 @@ public class Tamagotchi
 
     void ReduceBoredom()
     {
-        boredom -= 1;
+        boredom -= 2;
         Console.WriteLine($"{name} is now less bored!");
+        Console.ReadLine();
     }
 }
