@@ -1,12 +1,15 @@
 ﻿
 Tamagotchi t1 = new Tamagotchi();
+BabyTamagotchi bt1 = new BabyTamagotchi();
 
 Console.WriteLine("Please name your tamagotchi");
-t1.name = Console.ReadLine();
+bt1.name = Console.ReadLine();
 
-Console.WriteLine($"{t1.name}");
+Console.WriteLine($"{bt1.name}");
 
-while(t1.GetAlive() == true)
+bt1.Dog();
+
+/* while(t1.GetAlive() == true)
 {
     Console.Clear();
     t1.PrintStats();
@@ -18,15 +21,17 @@ while(t1.GetAlive() == true)
     Console.WriteLine($"5) Play with {t1.name} and a dog");
     Console.WriteLine("6) Do nothing");
 
-    string action = Console.ReadLine();
+    string? action = Console.ReadLine();
     if(action == "1"){
         t1.Feed();
     }
 
     if(action == "2"){
         Console.WriteLine("What word?");
-        string word = Console.ReadLine();
-        t1.Teach(word);
+        string? word = Console.ReadLine();
+        if(word?.Length > 0) {
+            t1.Teach(word);
+        }
     }
 
     if(action == "3"){
@@ -43,13 +48,13 @@ while(t1.GetAlive() == true)
     if(action =="5")
     {
         t1.Dog();
-        //Console.ReadLine();
+        Console.ReadLine();
     }
 
-    if(action == "6"){
-        Console.WriteLine("Doing nothing");
+   if(action == "6"){
+       Console.WriteLine("Doing nothing");
     }
-
+    
     if(action == "printstats"){
         t1.PrintStats();
         Console.ReadLine();
@@ -57,8 +62,8 @@ while(t1.GetAlive() == true)
 
     t1.Tick();
 }
-
-Console.WriteLine($"Oh no! {t1.name} died!");
-Console.WriteLine("Press Enter to quit.");
+ */
+/* Console.WriteLine($"Oh no! {t1.name} died!");
+Console.WriteLine("Press Enter to quit."); */
 
 Console.ReadLine();

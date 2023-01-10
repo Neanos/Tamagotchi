@@ -6,12 +6,12 @@ public class Tamagotchi
     int hunger;
     int boredom;
     bool isAlive = true;
-    private List<string> words = new List<string>(){"Hi"};
+    private List<string> words = new List<string>() { "Hi" };
     Random generator = new Random();
     Random generator2 = new Random();
     Random generator3 = new Random();
     int attraper;
-    public string name = "Alice";
+    public string? name;
 
     public void Feed()
     {
@@ -43,13 +43,15 @@ public class Tamagotchi
         hunger++;
         boredom++;
 
-        if(hunger > 10){
+        if (hunger > 10)
+        {
             isAlive = false;
         }
 
-        if(boredom > 10){
+        if (boredom > 10)
+        {
             isAlive = false;
-        }  
+        }
 
     }
 
@@ -67,12 +69,12 @@ public class Tamagotchi
     public void Ball()
     {
         int attraper = generator2.Next(2);
-        if(attraper == 0)
+        if (attraper == 0)
         {
             Console.WriteLine($"{name} catches the ball!");
         }
 
-        if(attraper == 1)
+        if (attraper == 1)
         {
             Console.WriteLine($"{name} misses the ball");
         }
@@ -83,9 +85,9 @@ public class Tamagotchi
 
     public void Dog()
     {
-        int dog = generator3.Next(2);
+        int dog = generator3.Next(20);
 
-        if(dog == 0)
+        if (dog == 0)
         {
             Console.WriteLine($"Oh no! {name} didn't out run the dog!");
             isAlive = false;
@@ -99,7 +101,7 @@ public class Tamagotchi
 
     }
 
-    void ReduceBoredom()
+    protected void ReduceBoredom()
     {
         boredom -= 2;
         Console.WriteLine($"{name} is now less bored!");
