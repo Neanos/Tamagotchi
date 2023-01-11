@@ -63,9 +63,18 @@ while(t1.GetAlive() == true)
         {
             Console.Clear();
             bt1.PrintStats();
+            Console.WriteLine($"What would you like to do with {bt1.name} today?");
+            Console.WriteLine($"1) Feed {bt1.name}");
+            Console.WriteLine($"2) Teach {bt1.name} a new word");
+            Console.WriteLine($"3) Talk to {bt1.name}");
+            Console.WriteLine($"4) Throw ball with {bt1.name}");
+            Console.WriteLine($"5) Play with {bt1.name} and a dog");
+            Console.WriteLine("7) Do nothing");
+            action = Console.ReadLine();
+
             
             Console.ReadLine();
-            
+            bt1.Tick();
         }
         
     }
