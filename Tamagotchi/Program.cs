@@ -1,15 +1,12 @@
-﻿
-Tamagotchi t1 = new Tamagotchi();
-BabyTamagotchi bt1 = new BabyTamagotchi();
+﻿Tamagotchi t1 = new Tamagotchi();
 
 Console.WriteLine("Please name your tamagotchi");
-bt1.name = Console.ReadLine();
+t1.name = Console.ReadLine();
 
-Console.WriteLine($"{bt1.name}");
+Console.WriteLine($"{t1.name}");
 
-bt1.Dog();
 
-/* while(t1.GetAlive() == true)
+while(t1.GetAlive() == true)
 {
     Console.Clear();
     t1.PrintStats();
@@ -19,7 +16,8 @@ bt1.Dog();
     Console.WriteLine($"3) Talk to {t1.name}");
     Console.WriteLine($"4) Throw ball with {t1.name}");
     Console.WriteLine($"5) Play with {t1.name} and a dog");
-    Console.WriteLine("6) Do nothing");
+    Console.WriteLine("6) Create a new baby tamagotchi");
+    Console.WriteLine("7) Do nothing");
 
     string? action = Console.ReadLine();
     if(action == "1"){
@@ -51,7 +49,28 @@ bt1.Dog();
         Console.ReadLine();
     }
 
-   if(action == "6"){
+    if(action == "6")
+    {
+        Console.Clear();
+        BabyTamagotchi bt1 = new BabyTamagotchi();
+
+        Console.WriteLine("Please name your baby");
+        bt1.name = Console.ReadLine();
+        Console.WriteLine($"You have named your baby {bt1.name}");
+
+        Console.ReadLine();
+        while(bt1.GetAlive() == true)
+        {
+            Console.Clear();
+            bt1.PrintStats();
+            
+            Console.ReadLine();
+            
+        }
+        
+    }
+
+   if(action == "7"){
        Console.WriteLine("Doing nothing");
     }
     
@@ -62,8 +81,8 @@ bt1.Dog();
 
     t1.Tick();
 }
- */
-/* Console.WriteLine($"Oh no! {t1.name} died!");
-Console.WriteLine("Press Enter to quit."); */
+
+Console.WriteLine($"Oh no! {t1.name} died!");
+Console.WriteLine("Press Enter to quit.");
 
 Console.ReadLine();
