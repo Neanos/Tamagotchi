@@ -83,7 +83,7 @@ public class Tamagotchi
 
     }
 
-    public void Dog()
+    public virtual void Dog()
     {
         int dog = generator3.Next(20);
 

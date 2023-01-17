@@ -11,7 +11,7 @@ public class BabyTamagotchi : Tamagotchi
 
     }
 
-    public void Dog()
+    public override void Dog() //override signalerar 
     {
          int dog = generator.Next(20);
 
