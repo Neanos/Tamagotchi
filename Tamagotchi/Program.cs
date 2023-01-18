@@ -8,7 +8,7 @@ t1.name = Console.ReadLine();
 Console.WriteLine($"{t1.name}");
 
 //Den här loopen körs så länge bool variabeln isAlive är true
-while(t1.GetAlive() == true)
+while (t1.GetAlive() == true)
 {
     //Ger spelaren alternativ till aktiviteter den kan göra med sin tamagotchi 
     Console.Clear();
@@ -24,36 +24,40 @@ while(t1.GetAlive() == true)
 
     //Lagrar spelarens svar och kör en if satas beroende på vad spelaren skrivit in
     string? action = Console.ReadLine();
-    if(action == "1"){
+    if (action == "1")
+    {
         t1.Feed();
     }
 
-    if(action == "2"){
+    if (action == "2")
+    {
         Console.WriteLine("What word?");
         string? word = Console.ReadLine();
-        if(word?.Length > 0) {
+        if (word?.Length > 0)
+        {
             t1.Teach(word);
         }
     }
 
-    if(action == "3"){
+    if (action == "3")
+    {
         t1.Hi();
         Console.ReadLine();
     }
 
-    if(action == "4")
+    if (action == "4")
     {
         t1.Ball();
         Console.ReadLine();
     }
 
-    if(action =="5")
+    if (action == "5")
     {
         t1.Dog();
         Console.ReadLine();
     }
 
-    if(action == "6")
+    if (action == "6")
     {
         Console.Clear();
         BabyTamagotchi bt1 = new BabyTamagotchi();
@@ -64,7 +68,7 @@ while(t1.GetAlive() == true)
 
         Console.ReadLine();
         action = "";
-        while(bt1.GetAlive() == true && action != "6")
+        while (bt1.GetAlive() == true && action != "6")
         {
             Console.Clear();
             bt1.PrintStats();
@@ -74,61 +78,68 @@ while(t1.GetAlive() == true)
             Console.WriteLine($"3) Talk to {bt1.name}");
             Console.WriteLine($"4) Throw ball with {bt1.name}");
             Console.WriteLine($"5) Play with {bt1.name} and a dog");
-            Console.WriteLine($"6) Go back and delete {bt1.name}");
+            Console.WriteLine($"6) Go back to {t1.name} and delete {bt1.name}");
             Console.WriteLine("7) Do nothing");
             action = Console.ReadLine();
 
-             if(action == "1")
-             {
+            if (action == "1")
+            {
                 bt1.Feed();
-                }
+            }
 
-            if(action == "2"){
+            if (action == "2")
+            {
                 Console.WriteLine("What word?");
                 string? word = Console.ReadLine();
-                if(word?.Length > 0) {
+                if (word?.Length > 0)
+                {
                     bt1.Teach(word);
                 }
             }
 
-            if(action == "3"){
+            if (action == "3")
+            {
                 bt1.Hi();
                 Console.ReadLine();
             }
 
-            if(action == "4")
+            if (action == "4")
             {
                 bt1.Ball();
                 Console.ReadLine();
             }
 
-            if(action =="5")
+            if (action == "5")
             {
                 bt1.Dog();
                 Console.ReadLine();
             }
 
-            if(action == "7"){
-            Console.WriteLine("Doing nothing");
+            if (action == "7")
+            {
+                Console.WriteLine("Doing nothing");
             }
-    
-            if(action == "printstats"){
+
+            if (action == "printstats")
+            {
                 bt1.PrintStats();
                 Console.ReadLine();
             }
 
-            
+
             Console.ReadLine();
             bt1.Tick();
         }
-        
+
     }
 
-   if(action == "7"){
-       Console.WriteLine("Doing nothing");
+    if (action == "7")
+    {
+        Console.WriteLine("Doing nothing");
     }
-    
-    if(action == "printstats"){
+
+    if (action == "printstats")
+    {
         t1.PrintStats();
         Console.ReadLine();
     }
